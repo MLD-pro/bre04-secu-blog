@@ -20,7 +20,6 @@ class Post {
         $this->content = $content;
         $this->author = $author;
         $this->created_at = $created_at;
-        $this->categories = $categories;
         
     }
 
