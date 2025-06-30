@@ -3,8 +3,6 @@
  * @author : Gaellan
  * @link : https://github.com/Gaellan
  */
-require_once "User.php";
-require_once "Category.php";
 
 class Post {
     private ?int $id = null;
@@ -13,6 +11,7 @@ class Post {
     private string $content;
     private string $author;
     private DateTime $created_at;
+    private array $categories = [];
 
     
     public function __construct(string $title, string $excerpt, string $content, string $author, DateTime $created_at) {
@@ -21,6 +20,8 @@ class Post {
         $this->content = $content;
         $this->author = $author;
         $this->created_at = $created_at;
+        $this->categories = $categories;
+        
     }
 
 
@@ -53,7 +54,12 @@ class Post {
     
     public function getCreatedAt(): DateTime
     {
-        return $this -> created_at;                           
+        return $this->created_at;
+    }
+    
+    public function getCategories(): array
+    {
+        return $this->categories;
     }
 
     
@@ -86,5 +92,10 @@ class Post {
     public function setCreatedAt(DateTime $created_at): void 
     {
         $this->created_at = $created_at;
+    }
+    
+    public function setCategories(array $categories): void 
+    {
+        $this->categories = $categories;
     }
 }

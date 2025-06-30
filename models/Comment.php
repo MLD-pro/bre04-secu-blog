@@ -3,8 +3,6 @@
  * @author : Gaellan
  * @link : https://github.com/Gaellan
  */
-require_once "User.php";
-require_once "Post.php";
 
 class Comment
 {

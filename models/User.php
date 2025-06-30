@@ -17,7 +17,7 @@ class User {
     public function __construct(string $username, string $email, string $password, string $role, DateTime $created_at) {
         $this->username = $username;
         $this->email = $email;
-        $this->setPassword($password);
+        $this->password = $password;
         $this->role = $role;
         $this->created_at = $created_at;
     }
@@ -50,9 +50,9 @@ class User {
         return $this -> role;
     }
     
-    public function getCreatedAt(): DateTime
+    public function getCreatedAt() : DateTime
     {
-        return $this -> created_at;
+        return $this->created_at;
     }
 
     
@@ -62,7 +62,7 @@ class User {
         $this->id = $id;
     }
     
-     public function setUsername(string $username): void 
+    public function setUsername(string $username): void 
     {
         $this->username = $username;
     }
@@ -72,9 +72,9 @@ class User {
         $this->email = $email;
     }
 
-    public function setPassword(string $password): void 
+     public function setPassword(string $password) : void
     {
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
+        $this->password = $password;
     }
     
     public function setRole(string $role): void 
@@ -82,7 +82,7 @@ class User {
         $this->role = $role;
     }
     
-    public function setCreatedAt(DateTime $created_at): void 
+     public function setCreatedAt(DateTime $created_at) : void
     {
         $this->created_at = $created_at;
     }
