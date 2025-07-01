@@ -59,7 +59,7 @@ class CategoryManager extends AbstractManager
     {
         $query = $this->db->prepare('
             SELECT * FROM categories
-            INNER JOIN posts_categories ON categories.id = posts_categories.category_id
+            JOIN posts_categories ON categories.id = posts_categories.category_id
             WHERE posts_categories.post_id = :postId
             ');
         
